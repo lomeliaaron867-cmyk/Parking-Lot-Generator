@@ -12,13 +12,14 @@ Run `main.py`, or use `run.bat`. It needs Python and Shapely (`pip install shape
 2. Pick a tool. Drag to draw roads, circle roads, and parking boxes. Select something to move it, resize it, or change its settings. Drag the middle square of a road to curve it.
 3. Press **Find layouts** to have the program try different layouts. Click one in the list to see it. This replaces the roads and parking you have, but Undo brings it back.
 
-A road that touches the property line becomes an entrance or exit.
+A straight or curved road that ends on the property line becomes an entrance or exit. Circle roads never do, so connect them with a straight road.
 
 ## What it can't do
 
 - It doesn't save or export anything.
 - Diagonal rows can be turned from 10 to 80 degrees with the Angle box, but they always use a lane around the edge. Find layouts tries every 15 degrees from 15 to 75.
 - Find layouts shows at most 100 layouts.
+- "Middle" lanes only work with straight spaces. Angled and parallel spaces have one-way aisles, which can't dead-end, so they use lanes at the sides instead.
 - Very large properties can take a while to find layouts.
 - It checks that each space connects to an entrance, but not how wide that path is or which way one-way aisles go.
 - It doesn't plan accessible spaces.

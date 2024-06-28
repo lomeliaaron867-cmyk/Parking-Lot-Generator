@@ -54,7 +54,7 @@ class App:
         self.canvas.bind("<Motion>", self.mouse_move)
         self.canvas.bind("<ButtonRelease-1>", self.mouse_up)
         window.bind("<Delete>", self.delete_key)
-        window.bind("<Control-z>", lambda event: self.undo())
+        window.bind("<Control-z>", self.undo_key)
         self.update()
 
     def make_panel(self):
@@ -217,9 +217,12 @@ class App:
         length = self.get_number(self.length, "Length", 50, 1000)
         if length is None:
             return
-        width = self.get_number(self.width, "Width", 50, 1000)
-        if width is None:
-            return
+        if self.shape.get() == "Square":
+            width = length   # a square doesn't use the width box
+        else:
+            width = self.get_number(self.width, "Width", 50, 1000)
+            if width is None:
+                return
         self.new_land(planner.make_property(self.shape.get(), length, width))
 
     def new_land(self, corners):
@@ -250,6 +253,11 @@ class App:
         # the Delete key should still work normally while typing in a box
         if event.widget.winfo_class() not in ("TEntry", "TCombobox"):
             self.delete()
+
+    def undo_key(self, event):
+        # same idea, Ctrl+Z in a box shouldn't undo the drawing
+        if event.widget.winfo_class() not in ("TEntry", "TCombobox"):
+            self.undo()
 
     def change_tool(self):
         self.new_corners = []
