@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "units": "feet",
+  "settings": {
+    "boundary": [
+      {
+        "x": -140,
+        "z": -130
+      },
+      {
+        "x": 140,
+        "z": -130
+      },
+      {
+        "x": 140,
+        "z": 130
+      },
+      {
+        "x": -140,
+        "z": 130
+      }
+    ],
+    "buildings": [],
+    "setback": 8,
+    "stallWidth": 9,
+    "stallDepth": 18,
+    "aisle": 24,
+    "angle": 90,
+    "orientation": 0,
+    "accessible": 4,
+    "evPercent": 10,
+    "compactPercent": 10,
+    "loading": false,
+    "loadingX": 80,
+    "loadingZ": -30,
+    "mode": "garage",
+    "levels": 3,
+    "floorHeight": 11,
+    "rampSlope": 12,
+    "slopeX": 0,
+    "slopeZ": 0,
+    "target": 100,
+    "removed": [],
+    "entranceSide": "south"
+  }
+}

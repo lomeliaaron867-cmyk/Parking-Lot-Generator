@@ -1,0 +1,56 @@
+{
+  "version": 2,
+  "units": "feet",
+  "settings": {
+    "boundary": [
+      {
+        "x": -130,
+        "z": -120
+      },
+      {
+        "x": 130,
+        "z": -120
+      },
+      {
+        "x": 130,
+        "z": 120
+      },
+      {
+        "x": -130,
+        "z": 120
+      }
+    ],
+    "buildings": [
+      {
+        "id": "building-1",
+        "x": 20,
+        "z": -78,
+        "w": 85,
+        "d": 50,
+        "height": 36,
+        "rotation": 0
+      }
+    ],
+    "setback": 8,
+    "stallWidth": 9,
+    "stallDepth": 18,
+    "aisle": 24,
+    "angle": 90,
+    "orientation": 0,
+    "accessible": 4,
+    "evPercent": 10,
+    "compactPercent": 10,
+    "loading": false,
+    "loadingX": 80,
+    "loadingZ": -30,
+    "mode": "surface",
+    "levels": 3,
+    "floorHeight": 11,
+    "rampSlope": 12,
+    "slopeX": 0,
+    "slopeZ": 0,
+    "target": 100,
+    "removed": [],
+    "entranceSide": "south"
+  }
+}
