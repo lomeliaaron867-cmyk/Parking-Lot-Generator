@@ -1,0 +1,27 @@
+{
+  "name": "parking-studio-python",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test": "tsc --noEmit",
+    "test:interactions": "node --experimental-strip-types src/cameraMath.test.ts && node --experimental-strip-types src/pointerRecovery.test.ts"
+  },
+  "dependencies": {
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.13",
+    "@types/react-dom": "19.1.9",
+    "@types/three": "0.180.0",
+    "typescript": "5.9.2",
+    "vite": "7.1.7"
+  }
+}

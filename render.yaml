@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: parking-studio-python
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: '8000'
