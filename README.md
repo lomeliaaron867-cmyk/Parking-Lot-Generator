@@ -106,4 +106,3 @@ Deployment configuration is included but no new public site has been deployed. D
 | tests/ | Python regression tests |
 | run.py | Local launcher |
 
-Developed with AI coding assistance. For a portfolio, accurately describe your own decisions, testing and contributions. No TestFit source code or assets are included. Third-party dependencies retain their licenses; select a license for your original code before inviting reuse.
