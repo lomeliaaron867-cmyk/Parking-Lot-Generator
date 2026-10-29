@@ -1,0 +1,35 @@
+name: Test Python and build editor
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '11.19.0'
+
+      - run: pip install -r requirements-dev.txt
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm test:interactions
+      - run: python -m pytest -q
+
+      - name: Test restricted-environment thread workers
+        run: python -m pytest -q
+        env:
+          PARKING_EXECUTOR: thread
